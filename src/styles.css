@@ -4,4 +4,10 @@
 
   body{
     font-family: 'Ubuntu', sans-serif !important;
+    background-color:rgb(211, 225, 243) !important;
+  }
+
+  .contact-img {
+    width: 150px;
+    border-radius: 50%;
   }
