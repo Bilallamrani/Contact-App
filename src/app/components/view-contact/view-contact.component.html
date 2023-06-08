@@ -1,1 +1,97 @@
-<p>view-contact works!</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <p class="h3 fw-bold" style="color: rgb(112, 60, 160)">View Contact</p>
+      <p class="fst-italic mt-3">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint at
+        necessitatibus doloribus dolorem est quidem aliquid minima, temporibus
+        sunt quod dolorum repellendus omnis deserunt! Labore quis soluta laborum
+        ex illo?
+      </p>
+    </div>
+  </div>
+</div>
+
+<!--Loading Spinner-->
+
+<div *ngIf = "loading" style="display: flex; justify-content: center;">
+  <app-spinner></app-spinner>
+</div>
+
+<!-- Error Message -->
+
+<div *ngIf="!loading && errorMessage">
+  <div class="container">
+      <div class="row">
+          <div class="col">
+              <p class="h4 text-danger fw-bold">{{errorMessage}}</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Contact Details -->
+
+<div *ngIf="!loading && isNotEmpty()" class="container">
+  <div class="row align-items-center">
+    <div class="col-sm-4">
+      <img
+        alt=""
+        class="contact-img-big"
+        [src]="contact.photo"
+      />
+    </div>
+    <div class="col-sm-6">
+      <ul class="list-group mt-3">
+        <li
+          class="list-group-item"
+          style="background-color: rgb(189, 175, 239)"
+        >
+          Name: <span class="fw-bold">{{contact.name}}</span>
+        </li>
+        <li
+          class="list-group-item"
+          style="background-color: rgb(189, 175, 239)"
+        >
+          Email: <span class="fw-bold">{{contact.email}}</span>
+        </li>
+        <li
+          class="list-group-item"
+          style="background-color: rgb(189, 175, 239)"
+        >
+          Mobile: <span class="fw-bold">{{contact.mobile}}</span>
+        </li>
+        <li
+          class="list-group-item"
+          style="background-color: rgb(189, 175, 239)"
+        >
+          Company: <span class="fw-bold">{{contact.company}}</span>
+        </li>
+        <li
+          class="list-group-item"
+          style="background-color: rgb(189, 175, 239)"
+        >
+          Title: <span class="fw-bold">{{contact.title}}</span>
+        </li>
+        <li
+          class="list-group-item"
+          style="background-color: rgb(189, 175, 239)"
+        >
+          Group Name: <span class="fw-bold">{{group.name}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- <pre> {{group | json}}</pre> -->
+  <div class="row mt-3">
+    <div class="col">
+      <a
+        class="btn"
+        style="background-color: blueviolet; color: beige"
+        routerLink="/"
+      >
+        <i class="fa fa-arrow-alt-circle-left"></i>&nbsp; Back
+      </a>
+    </div>
+  </div>
+</div>

@@ -11,44 +11,66 @@
     </div>
   </div>
 </div>
+<!-- <pre> {{groups | json}} </pre> -->
+<!-- <pre>{{contact | json}}</pre> -->
 
-<!--Contact Form-->
+<!--Loading Spinner-->
+
+<div *ngIf = "loading" style="display: flex; justify-content: center;">
+  <app-spinner></app-spinner>
+</div>
+
+<!-- Error Message -->
+
+<div *ngIf="!loading && errorMessage">
+  <div class="container">
+      <div class="row">
+          <div class="col">
+              <p class="h4 text-danger fw-bold">{{errorMessage}}</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!--Create Contact Form-->
 
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <form>
+      <form (submit)="createSubmit()">
         <div class="mb-2">
-          <input class="form-control" placeholder="Name" type="text" />
+          <input [(ngModel)]="contact.name" name="name" class="form-control"  placeholder="Name" type="text" required="true" />
         </div>
         <div class="mb-2">
-          <input class="form-control" placeholder="Photo Url" type="text" />
+          <input [(ngModel)]="contact.photo" name="photo" class="form-control" placeholder="Photo Url" type="text" required="true" />
         </div>
         <div class="mb-2">
-          <input class="form-control" placeholder="Email" type="email" />
+          <input [(ngModel)]="contact.email" name="email" class="form-control" placeholder="Email" type="email" required="true" />
         </div>
         <div class="mb-2">
-          <input class="form-control" placeholder="Mobile" type="number" />
+          <input [(ngModel)]="contact.mobile" name="mobile" class="form-control" placeholder="Mobile" type="number" required="true" />
         </div>
         <div class="mb-2">
-          <input class="form-control" placeholder="Company" type="text" />
+          <input [(ngModel)]="contact.company" name="company" class="form-control" placeholder="Company" type="text" required="true" />
         </div>
         <div class="mb-2">
-          <input class="form-control" placeholder="Title" type="text" />
+          <input [(ngModel)]="contact.title" name="title" class="form-control" placeholder="Title" type="text" required="true" />
         </div>
         <div class="mb-2">
-          <select class="form-control">
+          <select [(ngModel)]="contact.groupId" name="groupId"
+          *ngIf="groups.length > 0 " class="form-control" required="true">
             <option value="">Select a Group</option>
+            <option *ngFor="let group of groups" [value]="group.id">{{group.name}}</option>
           </select>
         </div>
           <div class="mt-2">
-            <input class="btn btn-primary" value="Create" type="submit" />
+            <input class="btn" value="Create" type="submit" style="background-color:blueviolet; color:white;" />
             <a class="btn btn-dark ms-2" routerLink="/">Close</a>
           </div>
       </form>
     </div>
     <div class="col-sm-4">
-        <img src="https://th.bing.com/th/id/R.6b0022312d41080436c52da571d5c697?rik=ejx13G9ZroRrcg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fuser-png-icon-young-user-icon-2400.png&ehk=NNF6zZUBr0n5i%2fx0Bh3AMRDRDrzslPXB0ANabkkPyv0%3d&risl=&pid=ImgRaw&r=0" class="contact-img">
+        <img [src]="contact.photo" class="contact-img">
     </div>
   </div>
 </div>
