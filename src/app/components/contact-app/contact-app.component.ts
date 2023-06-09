@@ -59,7 +59,7 @@ openConfirmationModal(contactId:string | undefined) {
   this.contactId = contactId;
 
   const modalRef = this.modalService.open(ConfirmationModalComponent);
-  modalRef.componentInstance.message = 'Êtes-vous sûr de vouloir supprimer cet élément ?';
+  modalRef.componentInstance.message = 'Are you sure you want to delete the contact?';
 
   modalRef.result.then((result) => {
     if (result === true) {
