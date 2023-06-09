@@ -12,9 +12,19 @@
   <!--Edit Contact Form-->
   
   <div class="container mt-4">
-    <div class="row">
-      <div class="col-sm-4">
+    <div class="row align-items-center">
+      <div class="col-sm-12 col-md-12 mt-5">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="mb-4">
+                <img [src]="contact.photo" class="contact-img">
+              </div>
+            </div>
+          </div>
+      <div class="col-sm-5">
         <form (submit)="submitUpdate()">
+          
           <div class="mb-2">
             <input [(ngModel)]="contact.name" required="true" [value]="contact.name" name="name" class="form-control" placeholder="Name" type="text" />
           </div>
@@ -39,16 +49,15 @@
               <option [value]="group.id" *ngFor="let group of groups"> {{group.name}}</option>
             </select>
           </div>
-            <div class="mt-2">
+            <div class="mt-3">
               <input class="btn" style="background-color:blueviolet; color:beige;" value="Update" type="submit" />
               <a class="btn btn-dark ms-2" routerLink="/">Close</a>
             </div>
         </form>
       </div>
-      <div class="col-sm-4">
-          <img [src]="contact.photo" class="contact-img">
-      </div>
     </div>
   </div>
+</div>
+</div>
   <!-- <pre>{{contact | json}}</pre> -->
   
