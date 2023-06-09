@@ -11,7 +11,9 @@ import { ViewContactComponent } from './components/view-contact/view-contact.com
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from "@angular/forms"
+import { FormsModule } from "@angular/forms";
+import { ConfirmationModalComponent } from './components/confirmation-modal/confirmation-modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -23,13 +25,17 @@ import { FormsModule } from "@angular/forms"
     EditContactComponent,
     ViewContactComponent,
     SpinnerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ConfirmationModalComponent,
+    
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

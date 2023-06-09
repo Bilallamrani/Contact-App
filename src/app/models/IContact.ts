@@ -5,6 +5,6 @@ export interface IContact {
     photo: string;
     mobile: string;
     company: string;
-    title: string;
+    function: string;
     groupId: string;
 }
