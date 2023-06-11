@@ -16,7 +16,7 @@
       "company": "BMW-Services",
       "email": "glenda@gmail.com",
       "function": "freelancer",
-      "mobile": 888895745845521400000,
+      "mobile": 888895745,
       "photo": "https://www.kindpng.com/picc/m/163-1636340_user-avatar-icon-avatar-transparent-user-icon-png.png",
       "groupId": "2"
     },
@@ -29,26 +29,6 @@
       "function": "Software Engineer",
       "groupId": "1",
       "id": "kLt-bJF"
-    },
-    {
-      "name": "Salsabile",
-      "photo": "https://carteque.jp/themes/carteque/assets/images/features_list_dentalapo03.png",
-      "email": "Salsa@gmail.com",
-      "mobile": 499834455,
-      "company": "Lamrani",
-      "function": "wife",
-      "groupId": "3",
-      "id": "QAJ57j6"
-    },
-    {
-      "id": "QOzFjul",
-      "name": "Bilal",
-      "photo": "https://th.bing.com/th/id/OIP.sHAE5n5SBSLH6KfNUTxSywAAAA?pid=ImgDet&w=350&h=400&rs=1",
-      "email": "Bilal-lamrani@hotmail.com",
-      "mobile": 487017338,
-      "company": "SignFree",
-      "function": "Web Dev",
-      "groupId": "1"
     }
   ],
   "groups": [

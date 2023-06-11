@@ -24,23 +24,7 @@
     </div>
 </div>
 
-<!--Loading Spinner-->
 
-<div *ngIf = "loading" style="display: flex; justify-content: center;">
-    <app-spinner></app-spinner>
-</div>
-
-<!-- Error Message -->
-
-<div *ngIf="!loading && errorMessage">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <p class="h4 text-danger fw-bold">{{errorMessage}}</p>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!--Cards-->
 
@@ -77,3 +61,21 @@
       </div>
     </div>
   </div>
+
+  <!--Loading Spinner-->
+
+<div *ngIf = "loading" style="display: flex; justify-content: center;">
+  <app-spinner></app-spinner>
+</div>
+
+<!-- Error Message -->
+
+<div *ngIf="!loading && errorMessage">
+  <div class="container">
+      <div class="row">
+          <div class="col">
+              <p class="h4 text-danger fw-bold">{{errorMessage}}</p>
+          </div>
+      </div>
+  </div>
+</div>
